@@ -7,9 +7,12 @@
     <style>
       .message { font-size: 1.3em; font-weight: bold; }
       .form-group p { margin-top:10px; }
+      [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+        display: none !important;
+      }
     </style>
   </head>
-<body ng-cloak="">
+<body ng-cloak class="ng-cloak">
    <div class="container" ng-controller="LunchCheckController as ctrl">
      <h1>Lunch Checker</h1>
 
@@ -23,7 +26,6 @@
              <button class="btn btn-default" ng-click="ctrl.checkItems()">Check If Too Much</button>
          </div>
          <div class="form-group message" ng-class="ctrl.hasItem ? 'text-success':'text-danger'">
-           <!-- Your message can go here. -->
            {{ ctrl.message }}
          </div>
    </div>
